@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>UX-UI | Instagram</title>
+  </head>
+  <body>
+    <h3>Introduzca su correo electrónico para recibir el avatar</h3>
+    <div class="container">
+      <input
+        type="text"
+        name="name"
+        id="name"
+        placeholder="Nombre"
+        autocomplete="off"
+      />
+      <input
+        type="email"
+        id="email"
+        placeholder="Correo electrónico"
+        autocomplete="off"
+      />
+      <button onclick="showAvatar()" id="getAvatar">Generate</button>
+    </div>
+    <br />
+    <div class="avatar-tags">
+      <img id="avatar" src="" alt="avatar" />
+      <div class="tags">
+        <p id="tagName"></p>
+        <p id="tagEmail"></p>
+      </div>
+    </div>
+    <script src="index.js"></script>
+  </body>
+</html>
