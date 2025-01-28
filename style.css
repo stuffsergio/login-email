@@ -117,7 +117,6 @@ img {
     width: 180px;
   }
   input {
-    padding: 0 8px;
     border-radius: 8px;
     font-size: 10px;
   }
@@ -126,7 +125,6 @@ img {
     padding: 0 8px;
     height: 30px; /* Altura del elemento */
     line-height: 1; /* Coincide con la altura */
-    text-align: center; /* Centrado horizontal */
   }
   main {
     display: flex;
@@ -142,8 +140,6 @@ img {
     top: 70px;
     right: 30px;
     width: 60px;
-    font-size: 10px;
-    padding: 0 8px;
   }
 
   #avatar-tags {
