@@ -32,83 +32,53 @@ body {
 }
 
 h3 {
-  display: none;
-  position: absolute;
   padding: 50px 70px;
   text-align: center;
   font-family: "HelveticaNeuePro", sans-serif;
   font-size: 24px;
-  font-weight: 600;
   color: #f6f6f6;
-}
-#menu-lateral {
-  position: absolute;
-  top: 5px;
-  left: 5px;
-  padding: 8px 0;
-  width: 130px;
-  height: 98vh;
-  text-align: center;
-  color: var(--font-color);
-  border: var(--border);
-  border-radius: var(--border-radius);
-  font-family: var(--font-family);
-  font-size: var(--font-size);
-  color: var(--font-color);
   display: flex;
-  flex-direction: column;
-}
-#elemento1 {
-  position: relative;
-  top: 50px;
-  left: 200px;
-  width: fit-content;
-  height: fit-content;
-  color: var(--font-color);
-  border: var(--border);
-  border-radius: var(--border-radius);
-}
-#elemento2 {
-  position: absolute;
-  top: 5px;
-  right: 5px;
-  width: 50%;
-  height: 98vh;
-  color: var(--font-color);
-  border: var(--border);
-  border-radius: var(--border-radius);
 }
 nav {
-  position: absolute;
-  width: fit-content;
-  top: 5px;
-  left: 140px;
+  color: var(--font-color);
   border: var(--border);
-  border-radius: var(--border-radius);
+  border-radius: 15px;
+  position: absolute;
+  padding: 7px;
+  margin: 0 5px;
+  top: 5px;
+  width: 98%;
 }
 nav ul {
   display: flex;
   flex-direction: row;
-  gap: 50px;
-}
-nav ul li {
-  font-family: var(--font-family);
-  font-size: var(--font-size);
-  padding: 8px 10px;
-}
-nav ul li:nth-child(2) {
-  color: var(--font-color);
-}
-nav ul li {
-  color: var(--font-color-opacity);
+  justify-content: space-between;
 }
 main {
-  position: absolute;
-  height: 100vh;
-  width: 100vw;
-  display: flex;
-  flex-direction: row;
+  display: grid;
+  grid-template-rows: 1fr 8fr 8fr;
+  /* Tres columnas: fija, flexible y el doble de flexible, la primera 200px, la segunda 1 flexible y la tercera 2 flexibles */
+  width: 98%;
+  place-self: center;
+  margin: 0 5px;
+  padding: 7px;
+  column-gap: 5px;
+  border: var(--border);
+  border-radius: 15px;
 }
+#menu-lateral {
+  color: var(--font-color);
+  padding: 5px;
+}
+#elemento1 {
+  padding: 5px;
+  color: var(--font-color);
+}
+#elemento2 {
+  color: var(--font-color);
+  padding: 5px;
+}
+
 #section2 {
   display: none;
   flex-direction: row;
