@@ -3,12 +3,28 @@
   padding: 0;
   box-sizing: border-box;
 }
-
+a {
+  text-decoration: none;
+  color: inherit;
+}
+ul {
+  list-style: none;
+}
+li {
+  list-style: none;
+}
 @font-face {
   font-family: "HelveticaNeuePro";
   src: url(fonts/HelveticaNeueLTPro-Bd.woff2) format(woff2);
 }
-
+:root {
+  --font-family: "HelveticaNeuePro", sans-serif;
+  --font-color: #f6f6f6;
+  --font-color-opacity: #f6f6f6b0;
+  --font-size: 12px;
+  --border: 1px solid #3e3e3e;
+  --border-radius: 8px;
+}
 body {
   background-color: #000;
   width: 100vw;
@@ -16,6 +32,8 @@ body {
 }
 
 h3 {
+  display: none;
+  position: absolute;
   padding: 50px 70px;
   text-align: center;
   font-family: "HelveticaNeuePro", sans-serif;
@@ -23,11 +41,81 @@ h3 {
   font-weight: 600;
   color: #f6f6f6;
 }
-main {
+#menu-lateral {
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  padding: 8px 0;
+  width: 130px;
+  height: 98vh;
+  text-align: center;
+  color: var(--font-color);
+  border: var(--border);
+  border-radius: var(--border-radius);
+  font-family: var(--font-family);
+  font-size: var(--font-size);
+  color: var(--font-color);
+  display: flex;
+  flex-direction: column;
+}
+#elemento1 {
+  position: relative;
+  top: 50px;
+  left: 200px;
+  width: fit-content;
+  height: fit-content;
+  color: var(--font-color);
+  border: var(--border);
+  border-radius: var(--border-radius);
+}
+#elemento2 {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  width: 50%;
+  height: 98vh;
+  color: var(--font-color);
+  border: var(--border);
+  border-radius: var(--border-radius);
+}
+nav {
+  position: absolute;
+  width: fit-content;
+  top: 5px;
+  left: 140px;
+  border: var(--border);
+  border-radius: var(--border-radius);
+}
+nav ul {
   display: flex;
   flex-direction: row;
+  gap: 50px;
+}
+nav ul li {
+  font-family: var(--font-family);
+  font-size: var(--font-size);
+  padding: 8px 10px;
+}
+nav ul li:nth-child(2) {
+  color: var(--font-color);
+}
+nav ul li {
+  color: var(--font-color-opacity);
+}
+main {
+  position: absolute;
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: row;
+}
+#section2 {
+  display: none;
+  flex-direction: row;
   gap: 15px;
-  justify-content: center;
+  width: fit-content;
+  position: absolute;
+  border: 1px solid red;
 }
 #name {
   width: 120px;
@@ -87,7 +175,7 @@ button:hover {
   flex-direction: column;
   gap: 2px;
 }
-img {
+#avatar {
   width: 28px;
   height: 28px;
   display: none;
@@ -103,6 +191,10 @@ img {
 }
 #tagEmail {
   color: #ffffffbb;
+}
+
+#team {
+  width: 500px;
 }
 
 @media (max-width: 450px) {
@@ -125,7 +217,7 @@ img {
   button {
     padding: 5px 8px;
   }
-  main {
+  #section2 {
     display: flex;
     flex-direction: column;
   }
@@ -148,7 +240,7 @@ img {
     padding: 6px 8px 6px 6px;
     gap: 5px;
   }
-  img {
+  #avatar {
     width: 22px;
     height: 22px;
   }

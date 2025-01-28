@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -8,7 +8,28 @@
   </head>
   <body>
     <h3>Generador de perfil</h3>
+    <nav aria-label="Menu principal">
+      <ul>
+        <li><a href="#">logoo</a></li>
+        <li><a href="#">Objeto1</a></li>
+        <li><a href="#">Objeto2</a></li>
+        <li><a href="#">Objeto3</a></li>
+        <li><a href="#">Objeto4</a></li>
+      </ul>
+    </nav>
     <main>
+      <aside aria-label="Menu lateral" id="menu-lateral">Menu lateral</aside>
+      <section id="elemento1">Hola1</section>
+      <section id="elemento2">Hola2</section>
+    </main>
+    <aside id="avatar-tags">
+      <img id="avatar" src="" alt="avatar" />
+      <div class="tags">
+        <p id="tagName"></p>
+        <p id="tagEmail"></p>
+      </div>
+    </aside>
+    <section id="section2">
       <div class="inputs">
         <input
           type="text"
@@ -25,14 +46,6 @@
         />
       </div>
       <button onclick="showAvatar()" id="getAvatar">Generate</button>
-    </main>
-    <br />
-    <section id="avatar-tags">
-      <img id="avatar" src="" alt="avatar" />
-      <div class="tags">
-        <p id="tagName"></p>
-        <p id="tagEmail"></p>
-      </div>
     </section>
     <script src="index.js"></script>
   </body>
