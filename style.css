@@ -124,8 +124,6 @@ img {
   input,
   button {
     padding: 0 8px;
-    height: 25px; /* Altura del elemento */
-    line-height: 1; /* Coincide con la altura */
   }
   main {
     display: flex;
