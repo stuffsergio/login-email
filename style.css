@@ -124,7 +124,7 @@ img {
   input,
   button {
     padding: 0 8px;
-    height: 28px; /* Altura del elemento */
+    height: 25px; /* Altura del elemento */
     line-height: 1; /* Coincide con la altura */
   }
   main {
