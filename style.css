@@ -121,6 +121,12 @@ img {
     border-radius: 8px;
     font-size: 10px;
   }
+  input,
+  button {
+    height: 40px; /* Altura del elemento */
+    line-height: 40px; /* Coincide con la altura */
+    text-align: center; /* Centrado horizontal */
+  }
   main {
     display: flex;
     flex-direction: column;
