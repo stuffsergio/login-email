@@ -37,55 +37,17 @@ h3 {
   font-family: "HelveticaNeuePro", sans-serif;
   font-size: 24px;
   color: #f6f6f6;
+}
+section {
+  align-self: center;
   display: flex;
-}
-nav {
-  color: var(--font-color);
-  border: var(--border);
-  border-radius: 15px;
-  position: absolute;
-  padding: 7px;
-  margin: 0 5px;
-  top: 5px;
-  width: 98%;
-}
-nav ul {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-}
-main {
-  display: grid;
-  grid-template-rows: 1fr 8fr 8fr;
-  /* Tres columnas: fija, flexible y el doble de flexible, la primera 200px, la segunda 1 flexible y la tercera 2 flexibles */
-  width: 98%;
   place-self: center;
-  margin: 0 5px;
-  padding: 7px;
-  column-gap: 5px;
-  border: var(--border);
-  border-radius: 15px;
 }
-#menu-lateral {
-  color: var(--font-color);
-  padding: 5px;
-}
-#elemento1 {
-  padding: 5px;
-  color: var(--font-color);
-}
-#elemento2 {
-  color: var(--font-color);
-  padding: 5px;
-}
-
 #section2 {
-  display: none;
+  display: flex;
   flex-direction: row;
   gap: 15px;
   width: fit-content;
-  position: absolute;
-  border: 1px solid red;
 }
 #name {
   width: 120px;

@@ -5,23 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="style.css" />
     <title>UX-UI | Instagram</title>
+    <script src="https://accounts.google.com/gsi/client" async defer></script>
   </head>
   <body>
     <h3>Generador de perfil</h3>
-    <nav aria-label="Menu principal">
-      <ul>
-        <li><a href="#">logoo</a></li>
-        <li><a href="#">Objeto1</a></li>
-        <li><a href="#">Objeto2</a></li>
-        <li><a href="#">Objeto3</a></li>
-        <li><a href="#">Objeto4</a></li>
-      </ul>
-    </nav>
-    <main>
-      <aside aria-label="Menu lateral" id="menu-lateral">Menu lateral</aside>
-      <section id="elemento1">Hola1</section>
-      <section id="elemento2">Hola2</section>
-    </main>
+
     <aside id="avatar-tags">
       <img id="avatar" src="" alt="avatar" />
       <div class="tags">
@@ -29,6 +17,7 @@
         <p id="tagEmail"></p>
       </div>
     </aside>
+
     <section id="section2">
       <div class="inputs">
         <input
@@ -47,6 +36,25 @@
       </div>
       <button onclick="showAvatar()" id="getAvatar">Generate</button>
     </section>
+
+    <h1>Iniciar sesión con Google</h1>
+    <div
+      id="g_id_onload"
+      data-client_id="1031366356818-g644gbbd0vttbh6rsjhl5omnpodh8o8d.apps.googleusercontent.com"
+      data-context="signin"
+      data-callback="handleCredentialResponse"
+      data-auto_prompt="false"
+    ></div>
+    <div
+      class="g_id_signin"
+      data-type="standard"
+      data-size="large"
+      data-theme="outline"
+      data-text="sign_in_with"
+      data-shape="rectangular"
+      data-logo_alignment="right"
+    ></div>
+
     <script src="index.js"></script>
   </body>
 </html>

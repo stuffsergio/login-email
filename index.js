@@ -23,3 +23,20 @@ function showAvatar () {
         tags.style.display = 'none';
     }
 }
+
+function handleCredentialResponse(response) {
+    console.log("ID Token: ", response.credential);
+    // Aquí puedes enviarlo a tu backend para verificar el usuario
+}
+
+const { OAuth2Client } = require('google-auth-library');
+const client = new OAuth2Client("1031366356818-g644gbbd0vttbh6rsjhl5omnpodh8o8d.apps.googleusercontent.com");
+
+async function verify(token) {
+    const ticket = await client.verifyIdToken({
+        idToken: token,
+        audience: "1031366356818-g644gbbd0vttbh6rsjhl5omnpodh8o8d.apps.googleusercontent.com",
+    });
+    const payload = ticket.getPayload();
+    console.log(payload); // Aquí tienes los datos del usuario
+}
