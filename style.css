@@ -190,16 +190,7 @@ line {
   align-items: center;
   margin: 40px;
 }
-input {
-  height: 40px; /* Ajusta según el tamaño deseado */
-  padding: 10px; /* Asegura un buen espacio interno */
-  text-align: center; /* Centra el texto horizontalmente */
-  vertical-align: middle; /* Intenta centrar verticalmente (aunque no siempre funciona en inputs) */
 
-  /* Solución más efectiva */
-  display: flex;
-  align-items: center;
-}
 .inputCiudad {
   display: flex;
   padding: 5px 8px;
