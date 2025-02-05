@@ -191,6 +191,8 @@ line {
   margin: 40px;
 }
 .inputCiudad {
+  display: flex;
+  text-align: center;
   padding: 5px 8px;
   margin: 5px 8px;
   border: none;
