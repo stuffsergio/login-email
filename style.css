@@ -290,13 +290,6 @@ h6 {
     display: flex;
     flex-direction: column;
   }
-  .inputs {
-    position: absolute;
-    display: flex;
-    gap: 10px;
-    top: 70px;
-    left: 30px;
-  }
   button {
     position: absolute;
     top: 70px;
