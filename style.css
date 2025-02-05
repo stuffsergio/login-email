@@ -192,6 +192,7 @@ line {
 }
 .inputCiudad {
   display: flex;
+  align-items: center;
   vertical-align: middle;
   padding: 5px 8px;
   margin: 5px 8px;
