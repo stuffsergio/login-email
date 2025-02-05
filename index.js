@@ -22,15 +22,57 @@ function showAvatar () {
         alert('Debes completar los campos');
         tags.style.display = 'none';
     }
-
-    if (avatar, tagName, tagEmail) {
-        const sectionInputsGenerator = document.getElementById('section2');
-        sectionInputsGenerator.style, display = 'none';
-    }
 }
 
-/*
-function handleCredentialResponse(response) {
+const apiKey = '19762c1305b9898fe35eb16428d4dd12 '; // Reemplaza con tu clave API
+    const weatherForm = document.getElementById('weatherForm');
+
+    weatherForm.addEventListener('submit', async (event) => {
+      event.preventDefault(); // Evitar el comportamiento por defecto del formulario
+                              // Evitamos que se recargue la página
+
+      const city = document.getElementById('city').value.trim(); //
+
+
+      const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${apiKey}`;
+
+      try {
+        const response = await fetch(url);
+        if (!response.ok) {
+          throw new Error('Ciudad no encontrada o error en la solicitud.');
+        }
+
+        const data = await response.json();
+        const temp = data.main.temp;
+        const description = data.weather[0].description;
+
+        const descriptionMap = {  // Creación de un objeto tipo mapa para la descripcion
+          "clear sky": "cielo despejado",
+          "overcast clouds": "nubes",
+          "broken clouds": "ciertas nubes",
+          "few clouds": "pocas nubes",
+          "scattered clouds": "nubes dispersas",
+          "shower rain": "lluvia ligera",
+          "rain": "lluvia",
+          "thunderstorm": "tormenta",
+          "snow": "nieve",
+          "mist": "neblina"
+        }
+
+        const weatherSection = document.getElementById('weather-section');
+        weatherSection.style.display = 'flex';
+
+        setTimeout(() => {
+          weatherSection.style.opacity = 1; // Transición de opacidad
+        }, 10);
+
+        document.getElementById('h6').textContent = `La temperatura en ${city} es ${temp}°C con ${descriptionMap[description]}.`;
+      } catch (error) {
+        alert(`Error: ${error.message}`); // Envía el throw new Error, completando el error.message declarado
+      }
+    });
+
+/*function handleCredentialResponse(response) {
     console.log("ID Token: ", response.credential);
     // Aquí puedes enviarlo a tu backend para verificar el usuario
 }
@@ -45,45 +87,4 @@ async function verify(token) {
     });
     const payload = ticket.getPayload();
     console.log(payload); // Aquí tienes los datos del usuario
-}
-*/
-
-
-function handleCredentialResponse(response) {
-    // Decodificar el ID Token (Google lo envía en base64)
-    const data = JSON.parse(atob(response.credential.split(".")[1]));
-
-    console.log("Datos del usuario:", data);
-
-    // Mostrar los datos en la web
-    document.getElementById("user-info").innerHTML = `
-        <h3>Bienvenido, ${data.name}</h3>
-        <p>Email: ${data.email}</p>
-        <img src="${data.picture}" alt="Avatar" width="100">
-        <button onclick="logout()">Cerrar sesión</button>
-    `;
-
-    // Guardar sesión en localStorage
-    localStorage.setItem("user", JSON.stringify(data));
-}
-function logout() {
-    localStorage.removeItem("user");
-    document.getElementById("user-info").innerHTML = "<p>Sesión cerrada</p>";
-    google.accounts.id.disableAutoSelect(); // Evita que Google auto-inicie sesión
-}
-window.onload = function () {
-    const user = JSON.parse(localStorage.getItem("user"));
-
-    if (user) {
-        document.getElementById("user-info").innerHTML = `
-            <h3>Bienvenido, ${user.name}</h3>
-            <p>Email: ${user.email}</p>
-            <img src="${user.picture}" alt="Avatar" width="100">
-            <button onclick="logout()">Cerrar sesión</button>
-        `;
-        document.getElementById("g_id_signin").style.display = "none"; // Ocultar botón de login
-    } else {
-        document.getElementById("g_id_signin").style.display = "block"; // Mostrar botón de login
-    }
-};
-
+}*/

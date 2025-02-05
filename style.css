@@ -3,6 +3,10 @@
   padding: 0;
   box-sizing: border-box;
 }
+@font-face {
+  font-family: "HelveticaNeuePro";
+  src: url(fonts/HelveticaNeueLTPro-Bd.woff2) format(woff2);
+}
 a {
   text-decoration: none;
   color: inherit;
@@ -12,18 +16,6 @@ ul {
 }
 li {
   list-style: none;
-}
-@font-face {
-  font-family: "HelveticaNeuePro";
-  src: url(fonts/HelveticaNeueLTPro-Bd.woff2) format(woff2);
-}
-:root {
-  --font-family: "HelveticaNeuePro", sans-serif;
-  --font-color: #f6f6f6;
-  --font-color-opacity: #f6f6f6b0;
-  --font-size: 12px;
-  --border: 1px solid #3e3e3e;
-  --border-radius: 8px;
 }
 body {
   background-color: #000;
@@ -38,12 +30,12 @@ h3 {
   font-size: 24px;
   color: #f6f6f6;
 }
-section {
-  align-self: center;
+#section1 {
   display: flex;
+  align-self: center;
   place-self: center;
 }
-#section2 {
+#section1 {
   display: flex;
   flex-direction: row;
   gap: 15px;
@@ -55,7 +47,8 @@ section {
 #email {
   width: 210px;
 }
-input {
+#name,
+#email {
   padding: 5px 8px;
   border: 1px solid #3e3e3e;
   border-radius: 8px;
@@ -64,13 +57,15 @@ input {
   background-color: #1c1c1c;
   color: #f6f6f6;
 }
-input::placeholder {
+#name::placeholder,
+#email::placeholder {
   color: #f6f6f6b0;
 }
-input:focus {
+#name:focus,
+#email:focus {
   outline: none;
 }
-button {
+#getAvatar {
   padding: 5px 8px;
   border: 1px solid #2dd4bf;
   border-radius: 8px;
@@ -81,7 +76,7 @@ button {
   color: #f6f6f6;
   opacity: 85%;
 }
-button:hover {
+#getAvatar:hover {
   scale: 1.05;
   opacity: 100%;
   transition: all 0.3s ease;
@@ -128,6 +123,145 @@ button:hover {
 #team {
   width: 500px;
 }
+/* API Weather */
+.custom-gradient {
+  position: absolute;
+  inset: 0; /* Equivalente a top: 0; right: 0; bottom: 0; left: 0 */
+  z-index: -10; /* Equivalente a -z-10 */
+  height: 100%; /* h-full */
+  width: 100%; /* w-full */
+  display: flex; /* Para centrar elementos si fuera necesario */
+  align-items: center; /* items-center */
+  padding: 6rem 1.25rem; /* px-5 (1.25rem) y py-24 (6rem) */
+  background: radial-gradient(
+    125% 125% at 50% 10%,
+    #000 40%,
+    #63e 100%
+  ); /* Degradado radial */
+}
+:root {
+  --bg-color: #09090b;
+  --white-color: #fafafa;
+  --primary-color: #27272a;
+  --secondary-color: #ff6500;
+  --border-radius: 18px;
+  --box-shadow: 0 0 12px #b0b0b046;
+}
+h4 {
+  margin: 80px 0 40px 0;
+  width: fit-content;
+  place-self: center;
+  font-family: "Geist", sans-serif; /* pedazo fuente locoo */
+  font-size: 32px;
+  color: var(--white-color);
+  text-shadow: 0 0 10px #ff660086;
+  z-index: 2;
+  letter-spacing: -0.5px;
+  background-image: url(../features/mesh-gradient-sol.webp);
+  background-size: 150%;
+  background-position: center;
+  background-repeat: repeat;
+  background-clip: text; /* El fondo se aplica al texto */
+  color: transparent; /* Para que se vea el fondo */
+}
+h4:hover {
+  opacity: 90%;
+  scale: 1.01;
+  transition: all 0.2s ease;
+}
+.icono-sol {
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin: 30px;
+}
+g,
+line {
+  stroke: var(--secondary-color);
+  fill: var(--secondary-color);
+}
+#weatherForm {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  place-content: center;
+  margin: 40px;
+}
+.buscadorCiudad {
+  display: flex;
+  flex-direction: row;
+}
+.inputCiudad {
+  font-family: "Geist", sans-serif;
+  padding: 12px 16px;
+  font-size: 11px;
+  border: none;
+  border-radius: var(--border-radius);
+  background-color: var(--bg-color);
+  color: var(--white-color);
+}
+.inputCiudad:focus {
+  outline: none; /* Quitamos el borde al estar dentro del elemento */
+}
+.inputCiudad::placeholder {
+  color: #fafafa7c;
+}
+.icon-input {
+  display: flex;
+  align-items: center;
+  padding: 0 0 0 15px;
+  height: fit-content;
+  border: 1px solid var(--primary-color);
+  background-color: var(--bg-color);
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+}
+.botonVerify {
+  font-family: "Geist", sans-serif;
+  padding: 10px 12px;
+  font-size: 12px;
+  background-color: var(--bg-color);
+  border: 1px solid var(--primary-color);
+  border-radius: var(--border-radius);
+  color: var(--white-color);
+}
+.botonVerify:hover {
+  scale: 0.95;
+  opacity: 85%;
+  transition: all 0.3s ease-in;
+}
+
+#weather-section {
+  display: none;
+  flex-direction: column;
+  position: absolute;
+  width: 400px;
+  top: 75px;
+  right: 10px;
+  padding: 40px;
+
+  background-color: #07233696;
+  border: 1px solid #072336;
+  border-radius: 50px;
+  opacity: 0;
+  transition: opacity 0.6s;
+}
+img {
+  width: 50px;
+  aspect-ratio: 1/1;
+  align-self: center;
+}
+h5 {
+  color: var(--white-color);
+  font-family: "HelveticaNeuePro", sans-serif;
+  font-size: 24px;
+}
+h6 {
+  color: var(--white-color);
+  font-family: "HelveticaNeuePro", sans-serif;
+  font-size: 18px;
+  text-align: center;
+}
 
 @media (max-width: 450px) {
   h3 {
@@ -149,7 +283,7 @@ button:hover {
   button {
     padding: 5px 8px;
   }
-  #section2 {
+  #section1 {
     display: flex;
     flex-direction: column;
   }
