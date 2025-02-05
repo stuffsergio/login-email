@@ -194,7 +194,7 @@ line {
 .inputCiudad {
   display: flex;
   padding: 5px 8px;
-  margin: 5px 8px;
+  margin: 5px 8px 0 8px;
   border: none;
   border-radius: 8px;
   font-family: "HelveticaNeuePro", sans-serif;
